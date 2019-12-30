@@ -24,5 +24,6 @@ public class BrandController {
 @PostMapping("/findPage")
     public PageResult<Brand> findPage(Integer page, Integer size, @RequestBody Map<String, String> searchMap) {
         return brandService.findPage(page, size, searchMap);
+
     }
 }
