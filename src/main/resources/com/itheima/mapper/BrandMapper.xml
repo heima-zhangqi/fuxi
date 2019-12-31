@@ -106,7 +106,7 @@
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
       #{letter,jdbcType=CHAR}, #{seq,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.itheima.pojo.Brand" >
+  <insert id="insertSelective" parameterType="com.itheima.pojo.Brand" useGeneratedKeys="true" keyProperty="id">
     insert into tb_brand
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
