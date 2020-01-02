@@ -31,5 +31,11 @@ public interface BrandService {
      */
     public Result add(Brand brand);
 
+    /**
+     * 根据ID查询品牌对象
+     * @param id
+     * @return
+     */
+    public Result findById(Integer id);
 
 }

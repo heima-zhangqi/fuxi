@@ -96,7 +96,24 @@ public class BrandServiceImpl implements BrandService {
         System.out.println("所影响的行数为：" + i);
         System.out.println(brand);
         //3.封装查询结果
-        Result result = new Result();
+        Result result = new Result(brand);
         return result;
+    }
+
+    /**
+     * 根据ID查询品牌对象
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Result findById(Integer id) {
+        // 业务逻辑
+        Brand brand = brandMapper.selectByPrimaryKey(id);
+        if (brand == null) {
+            return new Result(false, "无品牌数据", 1);
+        }
+        // 封装返回结果
+        return new Result(brand);
     }
 }

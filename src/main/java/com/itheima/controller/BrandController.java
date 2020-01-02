@@ -5,10 +5,7 @@ import com.itheima.entity.Result;
 import com.itheima.pojo.Brand;
 import com.itheima.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -32,5 +29,10 @@ public class BrandController {
     @PostMapping("/add")
     public Result add(@RequestBody Brand brand) {
         return brandService.add(brand);
+    }
+
+    @GetMapping("/findById")
+    public Result findById(Integer id) {
+        return brandService.findById(id);
     }
 }
