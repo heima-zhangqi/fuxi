@@ -38,4 +38,18 @@ public interface BrandService {
      */
     public Result findById(Integer id);
 
+    /**
+     * 根据ID更新产品
+     * @param id id
+     * @param brand 品牌
+     * @return
+     */
+    public Result update(Integer id,Brand brand);
+
+    /**
+     * 根据ID删除商品
+     * @param id
+     * @return
+     */
+    public Result delete(Integer id);
 }

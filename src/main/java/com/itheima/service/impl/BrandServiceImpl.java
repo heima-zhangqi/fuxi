@@ -96,7 +96,7 @@ public class BrandServiceImpl implements BrandService {
         System.out.println("所影响的行数为：" + i);
         System.out.println(brand);
         //3.封装查询结果
-        Result result = new Result(brand);
+        Result result = new Result();
         return result;
     }
 
@@ -114,6 +114,36 @@ public class BrandServiceImpl implements BrandService {
             return new Result(false, "无品牌数据", 1);
         }
         // 封装返回结果
-        return new Result(brand);
+        return new Result();
     }
+
+    /**
+     * 根据ID更新产品
+     *
+     * @param id    id
+     * @param brand 品牌
+     * @return
+     */
+    @Override
+    public Result update(Integer id, Brand brand) {
+        Result result = this.findById(id);
+        if (result.isSuccess()) {
+            brandMapper.updateByPrimaryKeySelective(brand);
+            return new Result();
+        }
+        return result;
+    }
+
+    /**
+     * 根据ID删除商品
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Result delete(Integer id) {
+        brandMapper.deleteByPrimaryKey(id);
+        return new Result();
+    }
+
 }

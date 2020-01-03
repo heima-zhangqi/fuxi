@@ -23,7 +23,6 @@ public class BrandController {
     @PostMapping("/findPage")
     public PageResult<Brand> findPage(Integer page, Integer size, @RequestBody Map<String, String> searchMap) {
         return brandService.findPage(page, size, searchMap);
-
     }
 
     @PostMapping("/add")
@@ -34,5 +33,15 @@ public class BrandController {
     @GetMapping("/findById")
     public Result findById(Integer id) {
         return brandService.findById(id);
+    }
+
+    @PutMapping("update")
+    public Result edit(Integer id, @RequestBody Brand brand) {
+        return brandService.update(id, brand);
+    }
+
+    @DeleteMapping("delete")
+    public Result delete(Integer id) {
+        return brandService.delete(id);
     }
 }

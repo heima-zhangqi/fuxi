@@ -1,6 +1,5 @@
 package com.itheima.entity;
 
-import com.itheima.pojo.Brand;
 import lombok.Data;
 
 /**
@@ -22,11 +21,9 @@ public class Result {
         this.code = code;
     }
 
-    public Result(Brand brand) {
+    public Result() {
         this.success = true;
         this.message = "执行成功";
-        this.code = 10000;
+        this.code = 00000;
     }
-
-
 }
